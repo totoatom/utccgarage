@@ -1,0 +1,54 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+$backgroundColor: #1d2123;
+$color: white;
+$borderColor: lighten($backgroundColor, 15%);
+$green: #79AC00;
+$darkGreen: darken($green, 15%);
+$lightGreen: lighten($green, 5%);
+body {
+  background-color: lighten($backgroundColor, 75%);
+  font-family: 'Raleway', sans-serif;
+}
+
+.navbar-default {
+  background-color: $backgroundColor;
+  border-color: black;
+}
+
+.navbar-default,
+.navbar-brand,
+.navbar-nav>li>a {
+  color: $color !important;
+}
+
+.navbar-nav>li>a {
+  transition: border-color 0.30s linear;
+  margin: 15px;
+  padding: 0 5px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid transparent;
+  outline: 0 !important;
+}
+
+.navbar-nav>li>a:hover {
+  border-color: $darkGreen;
+}
+
+.navbar-nav>li>a:active,
+.navbar-nav>li>a:focus {
+  outline: 0 !important;
+}
+
+.navbar-default .navbar-nav>.active>a {
+  background-color: $backgroundColor !important;
+  border-bottom: 2px solid $green;
+}
+
+.container.nav-padding {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+::selection {
+	background-color: $green;
+}

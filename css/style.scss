@@ -1,0 +1,34 @@
+body{
+    background-color: rgb(132, 133, 134);;
+}
+nav {
+    background-color : black;
+    color : white;
+}
+h1 {
+    color : rgb(211, 214, 219);
+    text-align : center;
+}
+h2 {
+    color : rgb(9, 211, 9);
+    text-align : center;
+}
+#unittemp{
+    color : rgb(30, 196, 132)
+}
+#unittempover{
+    color : rgb(189, 3, 3)
+}
+#temp{
+    padding-top : 50px;
+    padding-bottom: 30px;
+    background-color : rgba(30, 127, 160, 0.582); 
+}
+#tempnm{
+    width: 10%;
+    padding-bottom: 20px;
+}
+#temphigh{
+    width: 10%;
+    padding-bottom: 20px;
+}

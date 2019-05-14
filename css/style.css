@@ -1,0 +1,47 @@
+#usernor{
+    display: block;
+}
+#userres{
+    display: none;
+}
+#profile{
+    display : none;
+}
+#ft{
+    display : none;
+    }
+#ftnor{
+    display : block;
+}
+@media screen and (min-width: 200px) and (max-width: 800px) {
+    #profile{
+    display : block;
+    }
+    #ft{
+    display : block;
+    }
+    #usernor{
+    display: none;
+    }
+    #userres{
+    display: block;
+    }
+    #carouselFull{
+        margin-top:30px;
+    }
+    #ftnor{
+        display:none;
+    }
+    #threepic{
+        width:80px !important;
+    }
+    #threeslide{
+        height:auto !important;
+    }
+}
+hr{
+    height: 1px;
+color: red;
+background-color: red;
+border: none;
+}

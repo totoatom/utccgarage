@@ -1,0 +1,16 @@
+body{
+    background-color: rgb(92, 129, 134);;
+}
+#page{
+    border-color: aqua;
+}
+#table{
+    background-color: rgba(95, 110, 6, 0.952);
+    color: white;
+    width : 70%;
+    text-align: center;
+}
+nav {
+    background-color : black;
+    color : white;
+}
