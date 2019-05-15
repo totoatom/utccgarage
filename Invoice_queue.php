@@ -8,7 +8,9 @@ if (!isset($_SESSION['id']) || $type != 1) {
    exit(0);
 }
 $Queue_id_order   = $_GET['Queue_id_order'];
-$qpro = "SELECT * FROM queue WHERE Queue_id_order='$Queue_id_order'";
+$qpro = "SELECT * FROM queue 
+    LEFT JOIN invoice ON queue.Queue_id_order = invoice.Queue_id
+   WHERE Queue_id_order='$Queue_id_order'";
 $respro = mysqli_query($conn, $qpro);
 $rowpro = mysqli_fetch_array($respro, MYSQLI_ASSOC);
 $name = $_SESSION['name'];
@@ -21,7 +23,7 @@ $name = $_SESSION['name'];
    <meta charset="utf-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-   <title>UTCC JOBs</title>
+   <title>TNS Service</title>
 
    <!-- Bootstrap CSS CDN -->
    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
@@ -102,19 +104,19 @@ $name = $_SESSION['name'];
             <!--------------------------------------------------------------------------------------------------------------------------------------------------->
 
             <label class="form-text">ปัญหาของรถที่ช่างเจอ</label>
-            <input id="Invoice_found_problem" name="Invoice_found_problem" class="form-control" value="<?php echo   $rowpro['Queue_Brand_car']; ?>">
+            <input id="Invoice_found_problem" name="Invoice_found_problem" class="form-control" REQUIRED>
 
             <label class="form-text">ค่าใช้จ่ายทั้งหมดในการซ้อม</label>
             <input id="Invoice_cost" name="Invoice_cost" class="form-control">
 
             <label class="form-text">วันที่ออกใบชำระหนี้</label>
-            <input id="Invoice_start" name="Invoice_start" type="date" class="form-control" value="<?php echo strftime('%Y-%m-%d', strtotime($rowpro['Invoice_start']));          ?>">
+            <input id="Invoice_start" name="Invoice_start[]" type="date" class="form-control" value="<?php echo strftime('%Y-%m-%d', strtotime($rowpro['Invoice_start']));          ?>">
 
-            <label class="form-text">วันที่ออกใบชำระหนี้</label>
-            <input id="Invoice_start" name="Invoice_start" type="time" class="form-control" value="<?php echo strftime('%H:%M', strtotime($rowpro['Invoice_start']));          ?>">
+            <label class="form-text">เวลาที่ออกใบ</label>
+            <input id="Invoice_start" name="Invoice_start[]" type="time" class="form-control" value="<?php echo strftime('%H:%M', strtotime($rowpro['Invoice_start']));          ?>">
 
             <label class="form-text">วันที่สิ้นสุดการชำระหนี้</label>
-            <input id="Invoice_end" name="Invoice_end" type="date" class="form-control">
+            <input id="Invoice_end" name="Invoice_end" type="date" class="form-control" value="<?php echo strftime('%Y-%m-%d', strtotime($rowpro['Invoice_end']));          ?>">
 
 
 

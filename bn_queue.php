@@ -6,7 +6,7 @@
    
 
    if($_SERVER["REQUEST_METHOD"]=="POST"){
-        include "connect.php";
+        include "dbcon.php";
 		$id = $_POST["ID_user"];
 		$Queue_Status = 'รอการตรวจสอบ';
 		$Queue_Brand_car = $_POST["Queue_Brand_car"];
@@ -21,7 +21,7 @@
  VALUES
  ('$Queue_Brand_car','$Queue_problem_car','$Queue_date','$Queue_plate_car','$Queue_model_car','$Queue_color_car','$id','$Queue_Status',now())";
  
-	$result1 = mysqli_query($con, $sql1);
+	$result1 = mysqli_query($conn, $sql1);
 
 
 	 
@@ -44,6 +44,6 @@ if($result1){
 			}
 	
 							 
-mysqli_close($con);
+mysqli_close($conn);
    
 ?>

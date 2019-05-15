@@ -23,7 +23,7 @@ $result = mysqli_query($conn, $q);
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>UTCC JOBs</title>
+    <title>TNS Service</title>
 
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
@@ -44,7 +44,7 @@ $result = mysqli_query($conn, $q);
                 <a href="work.php"><img src="img/logoW.png" width="150px"></a>
                 <h5 style="color:white;margin-top:10px">ชื่อผู้ดูแล</h5>
                 <p><?php echo $name ?></p>
-                <a href="edit_pro.php"><button type="button" class="btn btn-primary">แก้ไขข้อมูลส่วนตัว</button></a>
+                <!-- <a href="edit_pro.php"><button type="button" class="btn btn-primary">แก้ไขข้อมูลส่วนตัว</button></a> -->
             </div>
 
             <ul class="list-unstyled components">
@@ -107,10 +107,9 @@ $result = mysqli_query($conn, $q);
                         <th>
                             <center>สถานะการชำระเงิน</center>
                         </th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
+                        <th>จัดการข้อมูลลูกค้า</th>
+                        <th>สร้างและแก้ไขใบชำระเงิน</th>
+                        <th>ยืนยันการชำระเงินลูกค้า</th>
 
 
                     </tr>
@@ -144,8 +143,7 @@ $result = mysqli_query($conn, $q);
 
 
                             <td><a href="Manage_queue.php?Queue_id_order=<?php echo $row['Queue_id_order']; ?>"><button class="btn btn-primary">จัดการข้อมูลลูกค้า</button></a></td>
-                            <td><a href="Invoice_queue.php?Queue_id_order=<?php echo $row['Queue_id_order']; ?>"><button class="btn btn-primary">สร้างใบชำระเงิน</button></a></td>
-                            <td><a href="Invoice_Manage.php?Queue_id_order=<?php echo $row['Queue_id_order']; ?>"><button class="btn btn-primary">แก้ไขข้อมูลใบชำระเงิน</button></a></td>
+                            <td><a href="Invoice_queue.php?Queue_id_order=<?php echo $row['Queue_id_order']; ?>"><button class="btn btn-primary">สร้างและแก้ไขใบชำระเงิน</button></a></td>
                             <td><a href="Invoice_payment.php?Queue_id_order=<?php echo $row['Queue_id_order']; ?>"><button class="btn btn-primary">ชำระเงินเรียบร้อยแล้ว</button></a></td>
                         </tr>
                     </tbody>

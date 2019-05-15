@@ -1,4 +1,4 @@
-<?php
+<!-- 
 ob_start();
 session_start();
 require_once 'dbcon.php';
@@ -33,7 +33,7 @@ if (isset($_POST['btn-login'])) {
         $errMSG = "Bad password";
     } else $errMSG = "User not found";
 }
-?>
+?> -->
 
 <!DOCTYPE html>
 
@@ -56,19 +56,9 @@ if (isset($_POST['btn-login'])) {
                 <div class="card">
                     <div class="card-body">
                         <!-- Form contact -->
-                        <form method="post" autocomplete="off">
+                        <form method="post" action="chk_login.php" autocomplete="off">
                             <h2 class="text-center py-4 font-bold font-up danger-text">เข้าสู่ระบบ</h2>
-                            <?php
-                            if (isset($errMSG)) {
-                                ?>
-                                <div class="form-group">
-                                    <div class="alert alert-<?php echo ($errTyp == "success") ? "success" : $errTyp; ?>">
-                                        <span class="glyphicon glyphicon-info-sign"></span> <?php echo $errMSG; ?>
-                                    </div>
-                                </div>
-                            <?php
-                        }
-                        ?>
+                         
                             <div class="md-form">
                                 <i class="fa fa-envelope prefix grey-text"></i>
                                 <input type="email" id="form21" name="Email" class="form-control" required />

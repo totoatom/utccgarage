@@ -15,7 +15,7 @@ exit(0);} ?>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>UTCC JOBs</title>
+    <title>TNS Service</title>
 
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
@@ -36,7 +36,7 @@ exit(0);} ?>
                 <a href="work.php"><img src="img/logoW.png" width="150px"></a>
                 <h5 style="color:white;margin-top:10px">ชื่อผู้ใช้</h5>
                 <p><?php echo $user ?></p>
-                <button type="button" class="btn btn-primary">แก้ไขข้อมูลส่วนตัว</button>
+                <a href="edit_pro.php"><button type="button" class="btn btn-primary">แก้ไขข้อมูลส่วนตัว</button></a>
             </div>
 
             <ul class="list-unstyled components">
@@ -87,6 +87,7 @@ exit(0);} ?>
             
                 <label class="form-text">ยีห้อรถ</label>
                <!-- <input id="Queue_Brand_car" name="Queue_Brand_car" class="form-control"> -->
+               
                <select name="Queue_Brand_car" class ="form-control" style="background-color: #eaebe6;">
                     <option value="Toyota">Toyota</option>
                     <option value="Isuzu">Isuzu</option>
@@ -102,38 +103,30 @@ exit(0);} ?>
                     <option value="MG">MG</option>
                     <option value="Volvo">Volvo</option>
                 </select>
-           
-           
+                
+                
                 <label class="form-text">รุ่นรถ</label>
-                <input id="Queue_model_car" name="Queue_model_car" class="form-control" style="background-color: #eaebe6;">
-          
+                
+                <input id="Queue_model_car" name="Queue_model_car" class="form-control" style="background-color: #eaebe6;" REQUIRED>
+                
                 <label class="form-text">วันที่ต้องการเข้า</label>
-               <!-- <input id="Queue_date" name="Queue_date" type="date" class="form-control"> -->
-               <input type="datetime-local" id="Queue_date" name="Queue_date" value="" class="form-control" style="background-color: #eaebe6;">
+               <input id="Queue_date" name="Queue_date" type="date" class="form-control">
            
                 <label class="form-text">สีรถ</label>
-               <input id="Queue_color_car" name="Queue_color_car" class="form-control" style="background-color: #eaebe6;">
+               <input id="Queue_color_car" name="Queue_color_car" class="form-control" style="background-color: #eaebe6;" REQUIRED>
            
                 <label class="form-text">ทะเบียนรถ</label>
-               <input id="Queue_Number_car" name="Queue_Number_car" class="form-control" style="background-color: #eaebe6;">
+               <input id="Queue_Number_car" name="Queue_Number_car" class="form-control" style="background-color: #eaebe6;" REQUIRED>
             
                 <label class="form-text">ปัญหาของรถ</label>
-               <textarea id="Queue_problem_car" style="background-color: #eaebe6;" name="Queue_problem_car"  class="form-control " > </textarea>
+               <textarea id="Queue_problem_car" style="background-color: #eaebe6;" name="Queue_problem_car" class="form-control "> </textarea>
           
-        
-        
-            <input id="ID_user" name="ID_user" type="hidden" value="<?php echo ($user); ?>">
+            
+            <input id="ID_user" name="ID_user" type="hidden" value="<?php echo ($id); ?>">
             <input name="submit" type="submit" id="submit"  class="btn btn-success btn-lg btn-block" style="margin-top:15px">
                   
         
     <br />
-        
-        
-
-    
-     
-
-
    
  </form>
  </div>

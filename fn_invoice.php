@@ -38,7 +38,7 @@ $result = mysqli_query($conn, $q);
    <meta charset="utf-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-   <title>UTCC JOBs</title>
+   <title>TNS Service</title>
 
    <!-- Bootstrap CSS CDN -->
    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
@@ -59,7 +59,7 @@ $result = mysqli_query($conn, $q);
             <a href="work.php"><img src="img/logoW.png" width="150px"></a>
             <h5 style="color:white;margin-top:10px">ชื่อผู้ใช้</h5>
             <p><?php echo $name ?></p>
-            <button type="button" class="btn btn-primary">แก้ไขข้อมูลส่วนตัว</button>
+            <a href="edit_pro.php"><button type="button" class="btn btn-primary">แก้ไขข้อมูลส่วนตัว</button></a>
          </div>
 
          <ul class="list-unstyled components">

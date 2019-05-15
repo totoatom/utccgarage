@@ -55,6 +55,36 @@ if (isset($_POST['edit'])) {
 }
 ?>
 
+<?php
+
+    if (isset($_POST['edit'])) {
+        $id = $_POST['id'];
+        $name = $_POST['name'];
+        $surname = $_POST['surname'];
+        $address = $_POST['address'];
+        $phone = $_POST ['phone'];
+
+
+            $sql = "UPDATE db_user SET name ='$name', surname = '$surname', address = '$address', phone = '$phone' WHERE ID='$id'";
+            $result12 = mysqli_query($conn, $sql);
+
+            if($result12){
+                echo "<script>";
+                echo "alert('อัพเดเทข้อมูลเรียบร้อย');";
+                echo "window.location ='mainpage.php';";
+                echo "</script>";
+            }
+            
+            else 
+                {
+                    echo "<script>alert('ไม่สามารถบันทึกได้ครับ');
+                    window.history.back()();</script>";
+                    exit();
+                }
+    
+        }
+?>
+
 <!DOCTYPE html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>

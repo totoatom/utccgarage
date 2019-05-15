@@ -22,7 +22,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>UTCC JOBs</title>
+    <title>TNS Service</title>
 
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
@@ -96,7 +96,9 @@
                 
                    <label class="form-text">วันที่สามารถนำรถเข้าการซ่อมได้</label>
                    <!-- <input id="Queue_end_date" name="Queue_end_date" type="date" class="form-control"> -->
-                   <input type="datetime-local" id="Queue_end_date" name="Queue_end_date" value="<?php echo date("c", strtotime($row['Queue_end_date'])); ?>" class="form-control" REQUIRED>
+                   <input id="s[]" name="s[]" type="date" class="form-control"value="<?php echo strftime('%Y-%m-%d',strtotime($rowpro['Queue_end_date']));  ?>">
+                   <label class="form-text">เวลาที่เข้ารับการซ่อม</label>
+                   <input id="s[]" name="s[]" type="time" class="form-control"value="<?php echo strftime('%H:%M',strtotime($rowpro['Queue_end_date']));  ?>">
                
                     <label class="form-text">ชื่อช่าง</label>
                    <!-- <input id="Queue_Mechanic_name" name="Queue_Mechanic_name"  class="form-control"> -->

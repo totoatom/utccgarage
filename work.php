@@ -5,6 +5,7 @@ require_once 'dbcon.php';
 
 // select logged in users detail
 if (isset($_SESSION['id'])) {
+  $_SESSION["type"];
   $res = $conn->query("SELECT * FROM db_user WHERE ID=" . $_SESSION['id']);
   $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
 }
@@ -68,10 +69,21 @@ if (isset($_SESSION['id'])) {
             </li>
 
             <li class="nav-item">
-              <a class="nav-link waves-effect" value="mainPage" name="link" href="mainpage.php" target="_blank">การจัดการ</a>
+              <a class="nav-link waves-effect" value="mainPage" name="link" href="<?php 
+               if($_SESSION["type"]=="0"){ //ถ้าเป็น user ให้กระโดดไปหน้า 
+
+                   Header("Location: mainpage.php");
+
+                    }
+
+                    if ($_SESSION["type"]=="1"){  //ถ้าเป็น admin ให้กระโดดไปหน้า 
+
+                        Header("Location: ad_main.php"); }?>" 
+
+              target="_blank">การจัดการ</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/getting-started/download/" target="_blank">การติดต่อ</a>
+              <a class="nav-link waves-effect" href="" target="_blank">วิธีการชำระเงิน</a>
             </li>
           </ul>
 
@@ -128,24 +140,24 @@ if (isset($_SESSION['id'])) {
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="d-block" id="threeslide" src="img/g1.jpg" alt="First slide" style="width: 100%;height: 600px;">
+        <img class="d-block" id="threeslide" src="img/TE1.png" alt="First slide" style="width: 100%;height: 600px;">
         <div class="carousel-caption d-md-block">
-          <h3>Welcome To my garage</h3>
-          <p> eget dolor quis, accumsan imperdiet elit. Praesent quis mauris</p>
+          <h3></h3>
+          
         </div>
       </div>
       <div class="carousel-item">
-        <img class="d-block" id="threeslide" src="img/g2.jpg" alt="Second slide" style="width: 100%;height: 600px;">
+        <img class="d-block" id="threeslide" src="img/TE2.png" alt="Second slide" style="width: 100%;height: 600px;">
         <div class="carousel-caption d-md-block">
-          <h3>Best Food and Wine Around</h3>
-          <p>Nullam at elementum felisscelerisque</p>
+          <h3></h3>
+          
         </div>
       </div>
       <div class="carousel-item">
-        <img class="d-block" id="threeslide" src="img/g2.jpg" alt="Third slide" style="width: 100%;height: 600px;">
+        <img class="d-block" id="threeslide" src="img/TE3.png" alt="Third slide" style="width: 100%;height: 600px;">
         <div class="carousel-caption d-md-block">
-          <h3>Award Winning and Friendly Service</h3>
-          <p>Nam scelerisqurhoncus nisi a, fermentum</p>
+          <h3></h3>
+         
         </div>
       </div>
     </div>
