@@ -5,9 +5,16 @@ require_once 'dbcon.php';
 
 // select logged in users detail
 if (isset($_SESSION['id'])) {
-  $_SESSION["type"];
+  $type =  $_SESSION["type"];
   $res = $conn->query("SELECT * FROM db_user WHERE ID=" . $_SESSION['id']);
   $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
+}
+if($type == 1){
+  $mainUser = "ad_main.php"; 
+  $mainLink = "adminPage";
+}else{
+  $mainUser = "mainpage.php";
+  $mainLink = "userPage";
 }
 ?>
 <!DOCTYPE html>
@@ -36,7 +43,7 @@ if (isset($_SESSION['id'])) {
       <div class="container">
 
         <!-- Brand -->
-        <a class="navbar-brand waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">
+        <a class="navbar-brand waves-effect" href="work.php" target="_blank">
           <img src="img/logoW.png" style="width:90px">
         </a>
 
@@ -69,18 +76,7 @@ if (isset($_SESSION['id'])) {
             </li>
 
             <li class="nav-item">
-              <a class="nav-link waves-effect" value="mainPage" name="link" href="<?php 
-               if($_SESSION["type"]=="0"){ //ถ้าเป็น user ให้กระโดดไปหน้า 
-
-                   Header("Location: mainpage.php");
-
-                    }
-
-                    if ($_SESSION["type"]=="1"){  //ถ้าเป็น admin ให้กระโดดไปหน้า 
-
-                        Header("Location: ad_main.php"); }?>" 
-
-              target="_blank">การจัดการ</a>
+              <a class="nav-link waves-effect" value="mainPage" name="link" href="<?php echo $mainUser?>?link= <?php echo $mainLink?>" target="_blank">การจัดการ</a>
             </li>
             <li class="nav-item">
               <a class="nav-link waves-effect" href="" target="_blank">วิธีการชำระเงิน</a>
