@@ -81,7 +81,11 @@ if (isset($_POST['btn-login'])) {
                             </div>
                             <div class="text-center">
                                 <a class="btn btn-outline-danger btn-lg" href="register.php">สมัครสมาชิก</a>
+                                <a class="btn btn-outline-danger btn-lg" href="work.php">กลับหน้าหลัก</a>
                             </div>
+                            
+                                
+                            
                         </form>
                         <!-- Form contact -->
                     </div>

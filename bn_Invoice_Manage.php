@@ -1,4 +1,6 @@
 <?php
+		ob_start();
+		session_start();
     require 'dbcon.php';
     if($_SERVER["REQUEST_METHOD"]=="POST"){
 		// $Invoice_order = $_POST['Invoice_order'];

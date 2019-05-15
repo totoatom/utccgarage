@@ -71,7 +71,7 @@ $result = mysqli_query($conn, $q);
                <a href="fn_queue.php">จองคิวซ่อมรถ</a>
             </li>
             <li class="active">
-               <a href="fn_invoice.php">รายการที่ต้องชำระ</a>
+               <a href="fn_invoice.php">รายการที่ต้องชำระเงิน</a>
             </li>
             <li>
                <a href="logout.php">ออกจากระบบ</a>    

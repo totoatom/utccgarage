@@ -70,7 +70,7 @@ if($type == 1){
           }
           ?>
             <li class="nav-item active" style="border-color:white">
-              <a class="nav-link waves-effect" href="#">หน้าแรก
+              <a class="nav-link waves-effect" href="work.php">หน้าแรก
                 <span class="sr-only">(current)</span>
               </a>
             </li>
@@ -128,70 +128,15 @@ if($type == 1){
   </header>
 
 
-  <div id="carouselFull" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselIndicators" data-slide-to="1"></li>
-      <li data-target="#carouselIndicators" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img class="d-block" id="threeslide" src="img/TE1.png" alt="First slide" style="width: 100%;height: 600px;">
-        <div class="carousel-caption d-md-block">
-          <h3></h3>
-          
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img class="d-block" id="threeslide" src="img/TE2.png" alt="Second slide" style="width: 100%;height: 600px;">
-        <div class="carousel-caption d-md-block">
-          <h3></h3>
-          
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img class="d-block" id="threeslide" src="img/TE3.png" alt="Third slide" style="width: 100%;height: 600px;">
-        <div class="carousel-caption d-md-block">
-          <h3></h3>
-         
-        </div>
-      </div>
-    </div>
-    <a class="carousel-control-prev" href="#carouselFull" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselFull" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
+
   <section id="about" style="margin-top:30px">
     <div class="container">
-      <h1 style="text-align:center">บริการของเรา</h1>
       <hr>
       <div class="row justify-content-center" align="center">
-        <div class="col ">
-          <img src="img/sq1.jpg" id="threepic" class="rounded-circle" alt="Cinque Terre" style="width:200px">
-        </div>
-        <div class="col ">
-          <img src="img/sq1.jpg" id="threepic" class="rounded-circle" alt="Cinque Terre" style="width:200px">
-        </div>
-        <div class="col ">
-          <img src="img/sq1.jpg" id="threepic" class="rounded-circle" alt="Cinque Terre" style="width:200px">
-        </div>
       </div>
       <br>
       <div class="row justify-content-center" align="center">
-        <div class="col">
-          <h4>ซ่อม</h4>
-        </div>
-        <div class="col">
-          <h4>After Service</h4>
-        </div>
-        <div class="col">
-          <h4>Professional</h4>
-        </div>
+            <img src="img/payment.png" style="width:50%; height:50%;"/>
       </div>
     </div>
   </section>

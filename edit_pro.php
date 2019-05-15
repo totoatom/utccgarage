@@ -118,22 +118,22 @@ if (isset($_POST['edit'])) {
                               
                                 <div class="md-form">
                                     <i class="fa fa-user prefix grey-text"></i>
-                                    <input type="text" name="name" id="form41" class="form-control" placeholder=<?php echo $name ?>>
+                                    <input type="text" name="name" id="form41" class="form-control" value=<?php echo $name ?>>
                                     <label for="form41">ชื่อ</label>
                                 </div>
                                 <div class="md-form">
                                     <i class="fa fa-tag prefix grey-text"></i>
-                                    <input type="text" name="surname" id="form51" class="form-control" placeholder=<?php echo $surname ?>>
+                                    <input type="text" name="surname" id="form51" class="form-control" value=<?php echo $surname ?>>
                                     <label for="form51">นามสกุล</label>
                                 </div>
                                 <div class="md-form">
                                 <i class="fa fa-home prefix grey-text" ></i>                                 
-                                 <textarea id="address" name="address" id="form121" class="form-control"   placeholder=<?php echo $address ?>></textarea>
+                                 <textarea id="address" name="address" id="form121" class="form-control"   value=<?php echo $address ?>></textarea>
                                  <label for="form121">ที่อยู่</label>
                                 </div>
                                 <div class="md-form">
                                     <i class="fa fa-phone-square prefix grey-text"></i>
-                                    <input type="text" id="form81" name="phone" class="form-control" placeholder=<?php echo $phone ?>>
+                                    <input type="text" id="form81" name="phone" class="form-control" value=<?php echo $phone ?>>
                                     <label for="form81">เบอร์โทรศัพท์</label>
                                 </div>                               
                                 <div class="text-center">

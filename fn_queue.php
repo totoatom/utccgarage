@@ -48,7 +48,7 @@ exit(0);} ?>
                     <a href="fn_queue.php">จองคิวซ่อมรถ</a>
                 </li>
                 <li>
-                <a href="fn_invoice.php">รายการที่ต้องชำระ</a>
+                <a href="fn_invoice.php">รายการที่ต้องชำระเงิน</a>
                 </li>
                 <li>
                 <a href="logout.php">ออกจากระบบ</a>    

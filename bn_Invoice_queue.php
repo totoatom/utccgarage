@@ -44,8 +44,11 @@ if($result1){
    
     }
    mysqli_close($con); -->
+   
    <?php
-    require 'dbcon.php';
+	ob_start();
+	session_start();
+ 	require 'dbcon.php';
     if($_SERVER["REQUEST_METHOD"]=="POST"){
 	$Queue_id = $_POST['Queue_id_order'];
 		$Invoice_found_problem = $_POST['Invoice_found_problem'];
