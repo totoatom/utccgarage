@@ -71,8 +71,6 @@ if (isset($_POST['btn-login'])) {
                                 <input type="password" id="form31" name="pass" class="form-control" required />
                                 <label for="form31">รหัสผ่าน</label>
                             </div>
-
-
                             <div class="text-center">
                                 <button type="submit" class="btn btn-success btn-lg" name="btn-login">เข้าสู่ระบบ</button>
                             </div>
@@ -83,8 +81,6 @@ if (isset($_POST['btn-login'])) {
                                 <a class="btn btn-outline-danger btn-lg" href="register.php">สมัครสมาชิก</a>
                                 <a class="btn btn-outline-danger btn-lg" href="work.php">กลับหน้าหลัก</a>
                             </div>
-                            
-                                
                             
                         </form>
                         <!-- Form contact -->

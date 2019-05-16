@@ -53,7 +53,7 @@ $result = mysqli_query($conn, $q);
                     <a href="ad_main.php">หน้าแรก</a>
                 </li>
                 <li>
-                    <a href="#">พูดคุย</a>
+                    <a href="ad_main_talk.php">พูดคุย</a>
                 </li>       
                 <li>
                     <a href="login.php">ออกจากระบบ</a>

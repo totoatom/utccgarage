@@ -49,23 +49,48 @@ session_start();
 				
                   if(mysqli_num_rows($result)==1){
 
-                      $row = mysqli_fetch_array($result);
-						$_SESSION["email"] = $row["Email"];
-						$_SESSION["name"] = $row["name"];
-                    	$_SESSION["surname"] = $row["surname"];
-						$_SESSION["id"] = $row["ID"];
-						
-						$_SESSION["type"] = $row["type"];
+                    $row = mysqli_fetch_array($result);
+                    $_SESSION["email"] = $row["Email"];
+                    $_SESSION["name"] = $row["name"];
+                    $_SESSION["surname"] = $row["surname"];
+                    $_SESSION["id"] = $row["ID"];
+                    $_SESSION["type"] = $row["type"];
 
-                      if($_SESSION["type"]=="0"){ //ถ้าเป็น user ให้กระโดดไปหน้า 
+                    $sub_query = "
+                    INSERT INTO login_details
+                    (user_id)
+                    VALUES ('".$row['ID']."')
+                    ";
+                    $statement = $conn->prepare($sub_query);
+                    $statement->execute();
+                    // $_SESSION['login_details_id'] = $conn->lastInsertId();
 
-                          Header("Location: mainpage.php");
+                    if($_SESSION["type"]=="0"){ //ถ้าเป็น user ให้กระโดดไปหน้า 
 
-                      }
+                        // $sub_query = "
+                        // INSERT INTO login_details
+                        // (user_id)
+                        // VALUES ('".$row['ID']."')
+                        // ";
+                        // $statement = $conn->prepare($sub_query);
+                        // $statement->execute();
+                        // $_SESSION['login_details_id'] = $conn->lastInsertId();
 
-                      if ($_SESSION["type"]=="1"){  //ถ้าเป็น admin ให้กระโดดไปหน้า 
+                        Header("Location: mainpage.php");
+                    }
 
-                          Header("Location: ad_main.php");
+                    if ($_SESSION["type"]=="1"){  //ถ้าเป็น admin ให้กระโดดไปหน้า 
+
+                        // $sub_query = "
+                        // INSERT INTO login_details
+                        // (user_id)
+                        // VALUES ('".$row['ID']."')
+                        // ";
+                        // $statement = $conn->prepare($sub_query);
+                        // $statement->execute();
+                        // $_SESSION['login_details_id'] = $conn->lastInsertId();
+
+                        Header("Location: ad_main.php");
 
                     
 

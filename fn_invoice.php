@@ -44,11 +44,71 @@ $result = mysqli_query($conn, $q);
    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
    <!-- Our Custom CSS -->
    <link rel="stylesheet" href="css/stylepage.css">
-
+   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+   
    <!-- Font Awesome JS -->
    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 
+   <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .label-container {
+            position: fixed;
+            bottom: 48px;
+            right: 105px;
+            display: table;
+            visibility: hidden;
+        }
+
+        .label-text {
+            color: #FFF;
+            background: rgba(51, 51, 51, 0.5);
+            display: table-cell;
+            vertical-align: middle;
+            padding: 10px;
+            border-radius: 3px;
+        }
+
+        .label-arrow {
+            display: table-cell;
+            vertical-align: middle;
+            color: #333;
+            opacity: 0.5;
+        }
+
+        .float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: rgb(70, 146, 247);
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            box-shadow: 2px 2px 3px #999;
+        }
+
+        .my-float {
+            font-size: 24px;
+            margin-top: 18px;
+        }
+
+        a.float+div.label-container {
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.5s ease;
+        }
+
+        a.float:hover+div.label-container {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
 </head>
 
 <body>
@@ -129,10 +189,6 @@ $result = mysqli_query($conn, $q);
                         <center>สถานะ
                      </th>
                      </center>
-                     <th>
-                        <center>แจ้งชำระเงิน
-                     </th>
-                     </center>
 
                   </tr>
                </thead>
@@ -166,12 +222,6 @@ $result = mysqli_query($conn, $q);
                            <center><?php echo $row['Invoice_status']; ?>
                         </td>
                         </center>
-                        <td>
-                           <center><a href=""><button>ติดต่อเจ้าหน้าที่</button></a>
-                        </td>
-                        </center>
-
-
 
                         <!--<td><center><a href="JavaScript:if(confirm('Confirm Delete?') == true){window.location='delete_mokoall.php?j_number=
 			   <?php echo $row["j_number"]; ?>';}"><button class="btn btn-danger">ลบ</button></a></td></center>-->
@@ -196,6 +246,7 @@ $result = mysqli_query($conn, $q);
    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
    <!-- Bootstrap JS -->
    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
    <script type="text/javascript">
       $(document).ready(function() {
@@ -205,6 +256,48 @@ $result = mysqli_query($conn, $q);
       });
    </script>
    </div>
+
+   <a href="#" class="float">
+        <i class="fa fa-comment my-float"></i>
+    </a>
+    <div class="label-container">
+        <div class="label-text">Chat</div>
+        <i class="fa fa-play label-arrow"></i>
+    </div>
+
+    <script>
+    $(document).ready(function(){
+
+        fetch_user();
+
+        setInterval(function(){
+            update_last_activity();
+            fetch_user();
+        }, 5000);
+
+        function fetch_user()
+        {
+            $.ajax({
+                url:"ms_fetch_user.php",
+                method:"POST",
+                success:function(data){
+                    $('#user_details').html(data);
+                }
+            })
+        }
+
+        function update_last_activity()
+        {
+            $.ajax({
+                url:"update_last_activity.php",
+                success:function()
+                {
+
+                }
+            })
+        }
+    });
+    </script>
 </body>
 
 </html>
